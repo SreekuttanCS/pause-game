@@ -20,14 +20,15 @@
   background-size: cover;
   background-position: center;
   position: relative;
-} 
+}
 .content {
   height: inherit;
   color: white;
-  /* background-color: rgba(128, 128, 128, 0.009);
+  /* background-color: rgba(223, 218, 218, 0.008);
   backdrop-filter: blur(2px); */
   position: relative;
 }
+
 .top-desc {
   font-size: 2.5rem;
   position: absolute;
@@ -49,8 +50,9 @@
 .instruction {
   font-size: 3rem;
 }
-.heading{
+.heading {
   color: #e64a06;
+  font-size: 5rem;
 }
 button {
   padding: 0.8rem;
@@ -62,9 +64,7 @@ button {
 .timer {
   font-size: 10rem;
 }
-.heading {
-  font-size: 5rem;
-}
+
 .pause {
   background: red;
   display: none;
@@ -80,6 +80,18 @@ button {
 .winner {
   font-size: 3rem;
   color: #ffa500;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .user {
   font-size: 1.5rem;

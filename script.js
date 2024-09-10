@@ -14,14 +14,9 @@ let userMS = document.querySelector(".user-ms");
 let custom = document.querySelector(".custom");
 let videosec = document.querySelector(".video-section");
 let name = document.querySelector(".name-submit");
-
+let chance = 0;
 let isRunnning = false;
-// function display() {
-//   topDesc.style.display = "block";
-// }
-// function submitFunction{
-//   topDesc.style.display="none";
-// }
+
 
 function user() {
   custom.style.display = "flex";
@@ -31,11 +26,8 @@ function back() {
 }
 function pass() {
   sec = userSec.value;
-  // ms=userMS.value;
   stopwatch();
-
   custom.style.display = "none";
-  // millisec.innerHTML=ms;
   second.innerHTML = sec;
 }
 
@@ -44,11 +36,14 @@ function startFunction() {
     isRunnning = true;
     stopwatch();
     videosec.play();
+    winner.innerHTML = "";
     pause.style.display = "block";
     start.style.display = "none";
   }
 }
+
 function resetFunction() {
+  chance = 0;
   desc.innerHTML = "0" + (Math.random() * 3).toFixed(3);
   isRunnning = false;
   stopwatch();
@@ -59,31 +54,50 @@ function resetFunction() {
 
   winner.innerHTML = "";
   pause.style.display = "none";
-  start.style.display = "block  ";
+  start.style.display = "block";
 }
 
 function pauseFunction() {
   videosec.pause();
-  isRunnning = false;
-  stopwatch();
-  console.log(desc.innerHTML);
 
+  stopwatch();
+  if (chance < 1) {
+    isRunnning = false;
+    start.style.display = "block";
+    pause.style.display = "none";
+    reset.style.display = "block ";
+    chance++;
+    console.log("1");
+    
+  } else {
+    isRunnning = false;
+    start.style.display = "none";
+    pause.style.display = "none";
+    reset.style.display = "block ";
+    console.log("2");
+    
+  }
   if (timmer.innerHTML == desc.innerHTML) {
     winner.innerHTML = "GOT IT🙌";
     winner.style.color = "greenyellow";
+
     pause.style.display = "none";
     start.style.display = "block";
+    reset.style.display = "block";
     timmer.style.color = "orange";
   } else {
     winner.innerHTML = "Try Again‼";
+    winner.style.color = "red";
     pause.style.display = "none";
-    start.style.display = "none ";
+    reset.style.display = "block";
+   
   }
+ 
+}
 
-  if (millisec.innerText == "000" && second.innerText == "00") {
-    pause.style.display = "none";
-    start.style.display = "none ";
-  }
+if (millisec.innerText == "000" && second.innerText == "00") {
+  pause.style.display = "none";
+  start.style.display = "none ";
 }
 
 function stopwatch() {
@@ -117,9 +131,5 @@ function stopwatch() {
     document.querySelector(".sec").innerHTML = second;
     document.querySelector(".millisec").innerHTML = milli;
     setTimeout(stopwatch, 1);
-  }
-  if (millisec.innerText == "000" && second.innerText == "00") {
-    pause.style.display = "none";
-    start.style.display = "none ";
   }
 }
