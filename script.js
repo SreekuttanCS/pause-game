@@ -17,7 +17,6 @@ let name = document.querySelector(".name-submit");
 let chance = 0;
 let isRunnning = false;
 
-
 function user() {
   custom.style.display = "flex";
 }
@@ -68,14 +67,12 @@ function pauseFunction() {
     reset.style.display = "block ";
     chance++;
     console.log("1");
-    
   } else {
     isRunnning = false;
     start.style.display = "none";
     pause.style.display = "none";
     reset.style.display = "block ";
     console.log("2");
-    
   }
   if (timmer.innerHTML == desc.innerHTML) {
     winner.innerHTML = "GOT IT🙌";
@@ -90,9 +87,7 @@ function pauseFunction() {
     winner.style.color = "red";
     pause.style.display = "none";
     reset.style.display = "block";
-   
   }
- 
 }
 
 if (millisec.innerText == "000" && second.innerText == "00") {
@@ -133,3 +128,7 @@ function stopwatch() {
     setTimeout(stopwatch, 1);
   }
 }
+
+window.addEventListener("load", (event) => {
+  desc.innerHTML = "0" + (Math.random() * 3).toFixed(3);
+});
