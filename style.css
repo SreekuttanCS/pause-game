@@ -31,12 +31,12 @@
 .howPlay {
   position: absolute;
   z-index: 3;
-  width: 30vw;
-  height: 55vh;
+  width: 35vw;
+  height: 60vh;
   color: white;
   backdrop-filter: blur(10px);
-  background: rgba(128, 128, 128, 0.34);
-  padding: 1rem;
+  background: #592418a9;
+  padding: 2rem;
   font-size: 2rem;
   display: none;
 }
@@ -132,4 +132,32 @@ button {
   border-radius: 10px;
   text-align: center;
   color: yellow;
+}
+
+.text-imp {
+  color: #f2dc99;
+}
+@media only screen and (max-width: 426px) {
+  .heading {
+    font-size: 3.5rem;
+  }
+  .howto {
+    font-size: 2rem;
+  }
+  .instruction {
+    font-size: 2.5rem;
+  }
+  .winner {
+    font-size: 3rem !important;
+  }
+  .timer {
+    font-size: 5rem;
+  }
+  .howPlay {
+    width: 75vw;
+    height: 75vh;
+    color: white;
+
+    font-size: 1.2rem;
+  }
 }
