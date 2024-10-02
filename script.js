@@ -132,3 +132,10 @@ function stopwatch() {
 window.addEventListener("load", (event) => {
   desc.innerHTML = "0" + (Math.random() * 3).toFixed(3);
 });
+
+function how() {
+  document.querySelector(".howPlay").style.display = "block";
+}
+function back() {
+  document.querySelector(".howPlay").style.display = "none";
+}

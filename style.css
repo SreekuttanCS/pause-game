@@ -28,7 +28,22 @@
   backdrop-filter: blur(2px); */
   position: relative;
 }
-
+.howPlay {
+  position: absolute;
+  z-index: 3;
+  width: 30vw;
+  height: 55vh;
+  color: white;
+  backdrop-filter: blur(10px);
+  background: rgba(128, 128, 128, 0.34);
+  padding: 1rem;
+  font-size: 2rem;
+  display: none;
+}
+.howto {
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
 .top-desc {
   font-size: 2.5rem;
   position: absolute;
